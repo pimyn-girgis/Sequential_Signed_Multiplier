@@ -3,12 +3,11 @@ module ctrl_unit(
   input z_flag_multiplicand,
   input lsb_multiplicand,
   input clk,
-  output reg is_multiplying,
-  output reg shift_en,
-  output reg reg_en,
-  output reg load,
-  output reg psel,
-  output reg led
+  output shift_en,
+  output reg_en,
+  output load,
+  output psel,
+  output led
 );
 
 reg [1:0] state;
@@ -20,12 +19,6 @@ parameter [1:0] D = 2'b11;
 
 initial begin
   state = A;
-  is_multiplying = 1'b0;
-  shift_en = 1'b0;
-  reg_en = 1'b0;
-  load = 1'b0;
-  psel = 1'b0;
-  led = 1'b0;
 end
 
 always @(*) begin
@@ -40,8 +33,6 @@ always @(*) begin
     B: begin
       if (BTNC) begin
         next <= B;
-      end else if (z_flag_multiplicand) begin
-        next <= D;
       end else begin
         next <= C;
       end
@@ -69,41 +60,10 @@ always @(posedge clk) begin
     state <= next;
 end
 
-always @(posedge clk) begin
-  case (next)
-    A: begin
-      is_multiplying <= 1'b0;
-      shift_en <= 1'b0;
-      reg_en <= 1'b0;
-      load <= 1'b0;
-      psel <= 1'b0;
-      led <= 1'b0;
-    end
-    B: begin
-      is_multiplying <= 1'b1;
-      shift_en <= 1'b0;
-      reg_en <= 1'b1;
-      load <= 1'b1;
-      psel <= 1'b0;
-      led <= 1'b0;
-    end
-    C: begin
-      is_multiplying <= 1'b1;
-      shift_en <= 1'b1;
-      reg_en <= 1'b1;
-      load <= 1'b0;
-      psel <= 1'b1;
-      led <= 1'b0;
-    end
-    D: begin
-      is_multiplying <= 1'b0;
-      shift_en <= 1'b0;
-      reg_en <= 1'b0;
-      load <= 1'b0;
-      psel <= 1'b0;
-      led <= 1'b1;
-    end
-  endcase
-end
+assign shift_en = (state == C) ? 1'b1 : 1'b0 ; 
+assign reg_en = (state == C || state == B) ? 1'b1 : 1'b0 ; 
+assign load = (state == B) ? 1'b1 : 1'b0 ; 
+assign psel = (state == C || state == D) ? 1'b1 : 1'b0 ; 
+assign led = (state == D) ? 1'b1 : 1'b0 ; 
 
 endmodule

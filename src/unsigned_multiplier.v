@@ -26,13 +26,12 @@ module unsigned_multiplier(
   assign lsb_multiplicand = shifted_multiplicand[0];
   assign zflag = (shifted_multiplicand == 8'b0);
 
-  always @(posedge clk) begin 
-   // cur_sum <= shifted_multiplicand[0]? cur_sum + shifted_multiplier : cur_sum;
-    if (reg_en && !load) begin
+  always @(posedge clk) begin
+    if (reg_en && psel) begin  
         product <=  shifted_multiplicand[0]? product + shifted_multiplier : product;
+    end else if (reg_en && !psel) begin
+        product <= 0;
     end
   end
-
-  
 
 endmodule

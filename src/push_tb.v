@@ -2,17 +2,15 @@
 
 
 
-module push_tb;
-
-
+module push_tb();
 
   reg sys_clk;
   reg in;
   reg rst;
-  wire  out;
+  wire out;
   
   push_button_detector DUT(
-    .sys_clk(sys_clk),
+    .clk(sys_clk),
     .in(in),
     .rst(rst),
     .out(out)
@@ -23,11 +21,12 @@ module push_tb;
    forever #10 sys_clk = ~sys_clk;
    end
    initial begin
-   rst = 1 ;
-   in = 1 ;
+ 
+   rst = 1;
+   in = 0;
    #50
-   in = 0 ;
-   rst = 0 ;  
+   rst = 0 ;
+   in = 1 ;
    end
    
 

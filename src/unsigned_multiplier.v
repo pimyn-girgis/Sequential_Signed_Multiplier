@@ -17,7 +17,8 @@ module unsigned_multiplier(
   
   wire [13:0] shifted_multiplier;
   wire [7:0] shifted_multiplicand;
-
+  // At the  first clock cycle, no shifting occurs. So , the it is considered as zero bits shift. 
+  // In the following cycles shifting occurs until multiplication stops.
   shift_left sl(multiplicand, shifted_multiplicand, clk, shift_en, load);
   shift_right sr(multiplier, shifted_multiplier, clk, shift_en, load);
 

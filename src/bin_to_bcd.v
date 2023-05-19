@@ -1,12 +1,12 @@
 module bin_to_bcd #(parameter W = 18) (
-    input[13:0] in,
+    input[14:0] in,
     output reg [19:0] bcd
     );
 
     integer i;
     always @(in) begin
         bcd = 20'b0;
-        for (i = 13; i >= 0; i = i - 1) begin
+        for (i = 14; i >= 0; i = i - 1) begin
             if (bcd[3:0] > 4) begin
                 bcd[3:0] = bcd[3:0] + 3;
             end if (bcd[7:4] > 4) begin

@@ -8,7 +8,7 @@ module unsigned_multiplier(
   input psel, // if 0 load 0 into product register, if 1 continue multiplication
   output reg [13:0] product,
   output zflag,
-  output lsb_multiplicand
+  output lsb_multiplier
 );
   
   initial begin 
@@ -23,7 +23,7 @@ module unsigned_multiplier(
 
   reg [13:0] cur_sum;
   
-  assign lsb_multiplicand = shifted_multiplier[0];
+  assign lsb_multiplier = shifted_multiplier[0];
   assign zflag = (shifted_multiplier == 8'b0);
 
   always @(posedge clk) begin

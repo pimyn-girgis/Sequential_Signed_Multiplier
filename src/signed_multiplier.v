@@ -6,7 +6,7 @@ module signed_multiplier(
   input reg_en, // register enable
   input load, // start multiplication
   input psel, // if 0 load 0 into product register, if 1 continue multiplication
-  output [13:0] product,
+  output [14:0] product,
   output reg sign,
   output  zflag,
   output  lsb_multiplier

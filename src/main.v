@@ -23,7 +23,7 @@ module main(
     wire zflag;
     wire lsb_multiplier;
     wire [19:0] bcd;
-    wire [13:0] product;
+    wire [14:0] product;
     wire load;
     wire BTNC;
     wire sign;

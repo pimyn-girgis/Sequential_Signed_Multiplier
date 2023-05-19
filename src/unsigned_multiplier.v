@@ -6,7 +6,7 @@ module unsigned_multiplier(
   input reg_en, // register enable
   input load, // start multiplication
   input psel, // if 0 load 0 into product register, if 1 continue multiplication
-  output reg [13:0] product,
+  output reg [14:0] product,
   output zflag,
   output lsb_multiplier
 );
@@ -22,8 +22,6 @@ module unsigned_multiplier(
   shift_left sl(multiplicand, shifted_multiplicand, clk, shift_en, load);
   shift_right sr(multiplier, shifted_multiplier, clk, shift_en, load);
 
-  reg [13:0] cur_sum;
-  
   assign lsb_multiplier = shifted_multiplier[0];
   assign zflag = (shifted_multiplier == 8'b0);
 

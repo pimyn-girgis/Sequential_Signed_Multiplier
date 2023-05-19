@@ -9,7 +9,7 @@ module signed_multiplier_tb;
   reg sys_clk;
   reg [7:0] multiplier;
   reg [7:0] multiplicand;
-  wire [13:0] product;
+  wire [14:0] product;
   wire  load;
   wire  BTNC;
   wire  led;
@@ -40,8 +40,8 @@ module signed_multiplier_tb;
    
    initial begin
    #100
-   multiplicand = 3 ;
-   multiplier = 5 ; 
+   multiplicand = 127 ;
+   multiplier = 127 ; 
    #100
    multiplicand = 0;
    multiplier = 5 ; 

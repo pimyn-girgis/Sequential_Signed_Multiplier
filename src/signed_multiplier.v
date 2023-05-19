@@ -8,8 +8,7 @@ module signed_multiplier(
   input psel, // if 0 load 0 into product register, if 1 continue multiplication
   output [14:0] product,
   output reg sign,
-  output  zflag,
-  output  lsb_multiplier
+  output  zflag
   );
 
 
@@ -26,6 +25,6 @@ module signed_multiplier(
   twos_complement tc2(multiplicand, comp_multiplicand);
 
   unsigned_multiplier um(comp_multiplier, comp_multiplicand,
-    clk, shift_en, reg_en, load, psel, product, zflag, lsb_multiplier);
+    clk, shift_en, reg_en, load, psel, product, zflag);
 
 endmodule

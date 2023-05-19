@@ -9,7 +9,7 @@ module signed_multiplier(
   output [13:0] product,
   output reg sign,
   output  zflag,
-  output  lsb_multiplicand
+  output  lsb_multiplier
   );
 
 
@@ -26,6 +26,6 @@ module signed_multiplier(
   twos_complement tc2(multiplicand, comp_multiplicand);
 
   unsigned_multiplier um(comp_multiplier, comp_multiplicand,
-    clk, shift_en, reg_en, load, psel, product, zflag, lsb_multiplicand);
+    clk, shift_en, reg_en, load, psel, product, zflag, lsb_multiplier);
 
 endmodule

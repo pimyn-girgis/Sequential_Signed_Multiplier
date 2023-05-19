@@ -21,7 +21,7 @@ module main(
     wire reg_en;
     wire psel;
     wire zflag;
-    wire lsb_multiplicand;
+    wire lsb_multiplier;
     wire [19:0] bcd;
     wire [13:0] product;
     wire load;
@@ -30,8 +30,8 @@ module main(
     
     clk_div clkdiv(sys_clk, clk);
     push_button_detector multiply(sys_clk, signal_in, rst, BTNC);
-    ctrl_unit cu(BTNC,zflag,lsb_multiplicand, sys_clk, shift_en, reg_en, load, psel, led);
-    signed_multiplier sm(multiplier, multiplicand, sys_clk, shift_en, reg_en, load, psel, product, sign, zflag,lsb_multiplicand);
+    ctrl_unit cu(BTNC,zflag,lsb_multiplier, sys_clk, shift_en, reg_en, load, psel, led);
+    signed_multiplier sm(multiplier, multiplicand, sys_clk, shift_en, reg_en, load, psel, product, sign, zflag,lsb_multiplier);
     bin_to_bcd binary_bcd(product,bcd);
     
     reg[1:0] display_enable;

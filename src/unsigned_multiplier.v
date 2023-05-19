@@ -18,17 +18,17 @@ module unsigned_multiplier(
   wire [13:0] shifted_multiplier;
   wire [7:0] shifted_multiplicand;
 
-  shift_left sl(multiplier, shifted_multiplier, clk, shift_en, load);
-  shift_right sr(multiplicand, shifted_multiplicand, clk, shift_en, load);
+  shift_left sl(multiplicand, shifted_multiplicand, clk, shift_en, load);
+  shift_right sr(multiplier, shifted_multiplier, clk, shift_en, load);
 
   reg [13:0] cur_sum;
   
-  assign lsb_multiplicand = shifted_multiplicand[0];
-  assign zflag = (shifted_multiplicand == 8'b0);
+  assign lsb_multiplicand = shifted_multiplier[0];
+  assign zflag = (shifted_multiplier == 8'b0);
 
   always @(posedge clk) begin
     if (reg_en && psel) begin  
-        product <=  shifted_multiplicand[0]? product + shifted_multiplier : product;
+        product <=  shifted_multiplier[0]? product + shifted_multiplicand : product;
     end else if (reg_en && !psel) begin
         product <= 0;
     end

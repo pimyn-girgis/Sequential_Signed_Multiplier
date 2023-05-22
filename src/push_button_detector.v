@@ -21,15 +21,13 @@
 
 
 module push_button_detector(
-    input sys_clk,
+    input clk,
     input in,
     input rst,
     output out
     );
-    wire clk, reset;
-    clk_div clkdiv(sys_clk, clk);
     wire db_out, sync_out;
-    debouncer db (clk, rst, in, db_out);
-    synchronizer sync (clk, rst, db_out, sync_out);
-    rising_edge_detector red(clk, rst, sync_out, out);
+    debouncer db(clk, rst, in, db_out);
+    synchronizer sync(clk, rst, db_out, sync_out);
+    rising_edge_detector detect(clk, rst, sync_out, out);
 endmodule

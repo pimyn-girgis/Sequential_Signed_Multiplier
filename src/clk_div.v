@@ -20,13 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module clk_div #(parameter n = 500000)(
+module clk_div #(parameter n = 5000)(
     input clk_in,
     output reg clk_out
     );
 reg [31:0] count;
-reg [4:0] rstcnt;
-
 always @ (posedge clk_in) begin
     count <= count + 1;
     if(count == n)

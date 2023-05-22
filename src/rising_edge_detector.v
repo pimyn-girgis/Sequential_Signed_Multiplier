@@ -28,7 +28,7 @@ output tck
 );
     reg [1:0] CurrentState, NextState;
     parameter [1:0] A=2'b00, B=2'b01, C=2'b10;
-    always @(posedge clk) begin
+    always @(CurrentState or lvl) begin
         case (CurrentState)
         A: if (lvl == 0) begin
             NextState = A;

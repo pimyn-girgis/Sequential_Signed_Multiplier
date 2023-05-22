@@ -14,10 +14,13 @@ module signed_multiplier(
 
   always @(posedge clk) begin
     if (load) begin
-      sign <= multiplicand[7] ^ multiplier[7];
+        if(multiplicand == 0 || multiplier == 0) begin
+            sign <=0;    
+        end else
+             sign <= multiplicand[7] ^ multiplier[7];
     end
   end
-
+  
   wire [7:0] comp_multiplier;
   wire [7:0] comp_multiplicand;
 

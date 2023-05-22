@@ -40,6 +40,7 @@ module seven_seg(input [1:0]en, input [3:0] num, output reg [6:0] segments, outp
             8: segments = 7'b0000000; 
             9: segments = 7'b0000100;
             10: segments = 7'b1111110;
+            11: segments = 7'b1111111;
             default: segments = 1;
         endcase 
     end

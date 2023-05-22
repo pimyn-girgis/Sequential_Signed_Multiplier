@@ -43,27 +43,29 @@ initial begin
   state = A;
 end
 
-always @(BTNR, BTNL) begin
+always @(BTNR,BTNL) begin
   case (state)
     A: begin
-      if (BTNR) begin
-        next <= A;
-      end else if (BTNL) begin
-        next <= B;
+      if (BTNL) begin
+        next = B;
+      end else begin 
+        next = A;
       end
     end
     B: begin
       if (BTNR) begin
-        next <= A;
+        next = A;
       end else if (BTNL) begin
-        next <= C;
+        next = C;
+      end else begin 
+        next = B;
       end
-    end
+       end
     C: begin
       if (BTNR) begin
-        next <= B;
-      end else if (BTNL) begin
-        next <= C;
+        next = B;
+      end else begin
+        next = C;
       end
     end
   endcase

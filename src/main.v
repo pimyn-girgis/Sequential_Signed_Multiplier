@@ -19,7 +19,7 @@ module main(
     rst = 1; 
     #10
     rst = 0;
-    end 
+    end
     
     wire clk;
     wire shift_en;
@@ -33,14 +33,14 @@ module main(
     wire sign;
     wire [3:0] right_digit ,middle_digit, left_digit;
     
-    clk_div clkdiv(sys_clk, clk);
-    push_button_detector multiply_pressed(sys_clk, signal_in, rst, BTNC);
-    push_button_detector right_pressed(sys_clk, right_button_in, rst, BTNR);
-    push_button_detector left_pressed(sys_clk, left_button_in, rst, BTNL);
+    clk_div clkdiv_btnc(sys_clk, clk);
+    push_button_detector multiply_pressed(clk, signal_in, rst, BTNC);
+    push_button_detector right_pressed(clk, right_button_in, rst, BTNR);
+    push_button_detector left_pressed(clk, left_button_in, rst, BTNL);
     ctrl_unit cu(BTNC,zflag,lsb_multiplier, sys_clk, shift_en, reg_en, load, psel, led);
     signed_multiplier sm(multiplier, multiplicand, sys_clk, shift_en, reg_en, load, psel, product, sign, zflag);
     bin_to_bcd binary_bcd(product,bcd);
-    buttons_control_unit bcu(bcd,BTNR,BTNL,sys_clk,right_digit,middle_digit,left_digit,sa,sb,sc);
+    buttons_control_unit bcu(bcd,BTNR,BTNL,clk,right_digit,middle_digit,left_digit,sa,sb,sc);
     
     reg[1:0] display_enable;
     always @(posedge clk) begin
@@ -55,7 +55,7 @@ module main(
             2'b10: in = right_digit;
             2'b01: in = middle_digit;
             2'b00: in = left_digit;
-            2'b11: in = (sign) ? 4'b1010 : 4'b0000;
+            2'b11: in = (sign) ? 4'b1010 : 4'b1011;
             default: in = 4'b0000;
         endcase
     end

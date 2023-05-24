@@ -2,9 +2,8 @@
 File: synchronizer.v
 Authors: CSCE 2302 Spring 2023 AUC.
 Description: This module is the synchronizer. It takes in a clock and a button
-             input and outputs a synchronized button. The synchronizer is necessary
-             because the buttons are very noisy and the FPGA registers the
-             button press multiple times.
+             input and outputs a synchronized button. The synchronizer provides
+             enough time for the metastability to settle.
 License: N/A
 ******************************************************************************/
 

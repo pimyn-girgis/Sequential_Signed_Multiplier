@@ -1,24 +1,12 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 05/09/2023 08:12:33 AM
-// Design Name: 
-// Module Name: rising_edge_detector
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+/*******************************************************************************
+File: rising_edge_detector.v
+Authors: Bemen Girgis & Ziad Hassan
+Description: This module generates a clock that is high for one clock cycle when
+             the input goes from low to high.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
 
+`timescale 1ns / 1ps
 
 module rising_edge_detector(
 input clk,

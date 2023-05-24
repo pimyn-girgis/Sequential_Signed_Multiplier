@@ -1,3 +1,11 @@
+/*******************************************************************************
+File: shift_left.v
+Authors: Bemen Girgis & Ziad Hassan
+Description: This module takes in an 8-bit number and left shifts it by 1 bit on
+             every clock cycle.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
+
 module shift_left(
   input [7:0] in,
   output reg [14:0] out,

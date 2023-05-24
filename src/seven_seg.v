@@ -1,25 +1,12 @@
+/*******************************************************************************
+File: seven_seg.v
+Authors: Bemen Girgis & Ziad Hassan
+Description: This module takes in a 4-bit number and outputs the corresponding
+             7-segment display.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
+
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 05/15/2023 06:00:54 AM
-// Design Name: 
-// Module Name: seven_seg
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module seven_seg(input [1:0]en, input [3:0] num, output reg [6:0] segments, output reg[3:0] anode_active);
     always @ (*) begin
         case(en) 

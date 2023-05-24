@@ -1,24 +1,12 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 05/09/2023 08:47:29 AM
-// Design Name: 
-// Module Name: clk_div
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+/*******************************************************************************
+File: clk_div.v
+Authors: Ziad Hassan & Bemen Girgis
+Description: This module is a clock divider. It takes in a clock and outputs a
+             slower clock depending on the parameter n.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
 
+`timescale 1ns / 1ps
 
 module clk_div #(parameter n = 5000)(
     input clk_in,

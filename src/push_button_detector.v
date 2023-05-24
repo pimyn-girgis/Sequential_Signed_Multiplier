@@ -1,25 +1,12 @@
+/*******************************************************************************
+File: push_button_detector.v
+Authors: Bemen Girgis & Ziad Hassan
+Description: This module instantiates a debouncer, synchronizer, and rising edge
+             detector to detect a button press.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
+
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 05/09/2023 08:46:55 AM
-// Design Name: 
-// Module Name: push_button_detector
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module push_button_detector(
     input clk,
     input in,

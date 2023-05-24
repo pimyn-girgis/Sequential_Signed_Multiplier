@@ -1,3 +1,11 @@
+/*******************************************************************************
+File: main.v
+Authors: Bemen Girgis & Ziad Hassan
+Description: This module is the top level module. It essentially connects all
+             the modules together to create a functioning multiplier.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
+
 module main(
   input signal_in,
   input left_button_in,

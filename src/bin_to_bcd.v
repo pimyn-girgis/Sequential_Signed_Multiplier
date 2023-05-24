@@ -1,3 +1,11 @@
+/*******************************************************************************
+File: bin_to_bcd.v
+Authors: Ziad Hassan & Bemen Girgis
+Description: This module takes in a 15-bit binary number and converts it to a
+             20-bit BCD number.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
+
 module bin_to_bcd #(parameter W = 18) (
     input[14:0] in,
     output reg [19:0] bcd

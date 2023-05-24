@@ -1,24 +1,13 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 05/19/2023 02:24:53 PM
-// Design Name: 
-// Module Name: buttons_control_unit
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+/*******************************************************************************
+File: buttons_control_unit.v
+Authors: Ziad Hassan & Bemen Girgis
+Description: This module is the control unit for the buttons. It takes in the
+             20-bit BCD number and outputs the 3 digits to be displayed on the
+             7-segment display.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
 
+`timescale 1ns / 1ps
 
 module buttons_control_unit(
   input [19:0] bcd,

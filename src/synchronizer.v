@@ -1,25 +1,14 @@
+/*******************************************************************************
+File: synchronizer.v
+Authors: CSCE 2302 Spring 2023 AUC.
+Description: This module is the synchronizer. It takes in a clock and a button
+             input and outputs a synchronized button. The synchronizer is necessary
+             because the buttons are very noisy and the FPGA registers the
+             button press multiple times.
+License: N/A
+******************************************************************************/
+
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 05/09/2023 08:56:36 AM
-// Design Name: 
-// Module Name: synchronizer
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module synchronizer(input clk, rst, in, output out);
     reg q1;
     reg q2;

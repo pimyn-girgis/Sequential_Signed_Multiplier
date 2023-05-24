@@ -1,3 +1,12 @@
+/*******************************************************************************
+File: ctrl_unit.v
+Authors: Bemen Girgis & Ziad Hassan
+Description: This module is the control unit for the multiplier. It takes in the
+             button, z_flag_multiplier, and clock signals and outputs the
+             appropriate signals to the multiplier.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
+
 module ctrl_unit(
   input BTNC,
   input z_flag_multiplier,

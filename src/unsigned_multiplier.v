@@ -1,3 +1,10 @@
+/*******************************************************************************
+File: unsigned_multiplier.v
+Authors: Ziad Hassan & Bemen Girgis
+Description: This module takes in two 8-bit numbers and outputs their product.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
+
 module unsigned_multiplier(
   input [7:0] multiplier,
   input [7:0] multiplicand,

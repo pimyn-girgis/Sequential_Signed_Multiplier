@@ -1,3 +1,11 @@
+/*******************************************************************************
+File: signed_multiplier.v
+Authors: Ziad Hassan & Bemen Girgis
+Description: This module takes in two 8-bit numbers and multiplies them together
+             using the unsigned multiplier module.
+License: GPLv2 (see LICENSE file)
+******************************************************************************/
+
 module signed_multiplier(
   input [7:0] multiplier,
   input [7:0] multiplicand,

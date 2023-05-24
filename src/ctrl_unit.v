@@ -24,39 +24,39 @@ always @(*) begin
   case (state)
     A: begin
       if (BTNC) begin
-        next = B;
+        next <= B;
       end else begin
-        next = A;
+        next <= A;
       end
     end
     B: begin
       if (BTNC) begin
-        next = B;
+        next <= B;
       end else begin
-        next = C;
+        next <= C;
       end
     end
     C: begin
       if (BTNC) begin
-        next = B;
+        next <= B;
       end else if (z_flag_multiplier) begin
-        next = D;
+        next <= D;
       end else begin
-        next = C;
+        next <= C;
       end
     end
     D: begin
       if (BTNC) begin
-        next = B;
+        next <= B;
       end else begin
-        next = D;
+        next <= D;
       end
     end
   endcase
 end
 
 always @(posedge clk) begin
-    state = next;
+    state <= next;
 end
 
 assign shift_en = (state == C) ? 1'b1 : 1'b0 ; 

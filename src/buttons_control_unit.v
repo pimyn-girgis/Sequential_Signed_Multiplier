@@ -27,10 +27,7 @@ module buttons_control_unit(
   input clk,
   output [3:0] right_digit,
   output [3:0] middle_digit,
-  output [3:0] left_digit,
-  output sa,
-  output sb,
-  output sc
+  output [3:0] left_digit
 );
 
 reg [1:0] state;

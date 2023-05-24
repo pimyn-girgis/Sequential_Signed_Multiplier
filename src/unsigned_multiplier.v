@@ -18,8 +18,8 @@ module unsigned_multiplier(
   wire [14:0] shifted_multiplicand;
   // At the  first clock cycle, no shifting occurs. So , then it is considered as zero bits shift. 
   // In the following cycles shifting occurs until multiplication stops.
-  shift_left sl(.in(multiplicand), .out(shifted_multiplicand), .clk(clk), .en(shift_en), .load(load));
-  shift_right sr(.in(multiplier), .out(shifted_multiplier), .clk(clk), .en(shift_en), .load(load));
+  shift_left sl(multiplicand, shifted_multiplicand, clk, shift_en, load);
+  shift_right sr(multiplier, shifted_multiplier, clk, shift_en, load);
 
   assign zflag = (shifted_multiplier == 8'b0);
 

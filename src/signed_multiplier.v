@@ -24,8 +24,8 @@ module signed_multiplier(
   wire [7:0] comp_multiplier;
   wire [7:0] comp_multiplicand;
 
-  twos_complement tc_multiplier(.in(multiplier), .out(comp_multiplier));
-  twos_complement tc_multiplicand(.in(multiplicand), .out(comp_multiplicand));
+  twos_complement tc1(multiplier, comp_multiplier);
+  twos_complement tc2(multiplicand, comp_multiplicand);
 
   unsigned_multiplier um(comp_multiplier, comp_multiplicand,
     clk, shift_en, reg_en, load, psel, product, zflag);

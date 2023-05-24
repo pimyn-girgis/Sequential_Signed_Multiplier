@@ -7,10 +7,7 @@ module main(
   input [7:0] multiplicand,
   output [6:0] segments,
   output [3:0] anode_active,
-  output led,
-  output sa,
-  output sb,
-  output sc
+  output led
 );
 
     reg rst;
@@ -33,14 +30,14 @@ module main(
     wire sign;
     wire [3:0] right_digit ,middle_digit, left_digit;
     
-    clk_div clkdiv_btnc(sys_clk, clk);
-    push_button_detector multiply_pressed(clk, signal_in, rst, BTNC);
-    push_button_detector right_pressed(clk, right_button_in, rst, BTNR);
-    push_button_detector left_pressed(clk, left_button_in, rst, BTNL);
-    ctrl_unit cu(BTNC,zflag,lsb_multiplier, sys_clk, shift_en, reg_en, load, psel, led);
-    signed_multiplier sm(multiplier, multiplicand, sys_clk, shift_en, reg_en, load, psel, product, sign, zflag);
-    bin_to_bcd binary_bcd(product,bcd);
-    buttons_control_unit bcu(bcd,BTNR,BTNL,clk,right_digit,middle_digit,left_digit,sa,sb,sc);
+    clk_div clkdiv_btnc(.clk_in(sys_clk), .clk_out(clk));
+    push_button_detector multiply_pressed(.clk(clk), .in(signal_in), .rst(rst), .out(BTNC));
+    push_button_detector right_pressed(.clk(clk), .in(right_button_in), .rst(rst), .out(BTNR));
+    push_button_detector left_pressed(.clk(clk), .in(left_button_in), .rst(rst), .out(BTNL));
+    ctrl_unit cu(.BTNC(BTNC),.z_flag_multiplier(zflag),.clk(sys_clk), .shift_en(shift_en), .reg_en(reg_en), .load(load), .psel(psel), .led(led));
+    signed_multiplier sm(.multiplier(multiplier), .multiplicand(multiplicand), .clk(sys_clk), .shift_en(shift_en), .reg_en(reg_en), .load(load), .psel(psel), .product(product), .sign(sign), .zflag(zflag));
+    bin_to_bcd binary_bcd(.in(product),.bcd(bcd));
+    buttons_control_unit bcu(.bcd(bcd),.BTNR(BTNR),.BTNL(BTNL),.clk(clk),.right_digit(right_digit),.middle_digit(middle_digit),.left_digit(left_digit));
     
     reg[1:0] display_enable;
     always @(posedge clk) begin
@@ -60,7 +57,7 @@ module main(
         endcase
     end
 
-    seven_seg seg(display_enable, in, segments, anode_active);
+    seven_seg seg(.en(display_enable), .num(in), .segments(segments), .anode_active(anode_active));
   
 endmodule
 

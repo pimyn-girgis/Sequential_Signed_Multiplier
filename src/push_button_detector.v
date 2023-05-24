@@ -27,7 +27,7 @@ module push_button_detector(
     output out
     );
     wire db_out, sync_out;
-    debouncer db(.clk(clk), .rst(rst), .in(in), .out(db_out));
-    synchronizer sync(.clk(clk), .rst(rst), .in(in), .out(sync_out));
-    rising_edge_detector detect(.clk(clk), .rst(rst), .lvl(sync_out), .tck(out));
+    debouncer db(clk, rst, in, db_out);
+    synchronizer sync(clk, rst, db_out, sync_out);
+    rising_edge_detector detect(clk, rst, sync_out, out);
 endmodule

@@ -1,12 +1,45 @@
-# Sequential_Signed_Multiplier
-Implementing an 8-bit sequential signed multiplier for CSCE 2301 taught by Dr. Mohamed Shalan Spring 2023 at AUC.
-# Introduction
-The sequential multiplier is designed to perform the multiplication of signed numbers, using two's complement representation. The design process involves creating a block diagram, implementing the design using software tools like Logisim-evolution and Verilog, and finally implementing the design on an FPGA board (DIGILENT BASYS3).
-# Specifications
-The implemented design utilizes the DIGILENT BASYS3 board, which includes four seven-segment displays, three push buttons, and 16 switches. The switches represent the two numbers to be multiplied in two's complement form, with the leftmost eight switches representing the multiplier and the rightmost eight switches representing the multiplicand. The seven-segment displays are used to display the result of the multiplication, with the leftmost display indicating the sign and the remaining three displays showing the unsigned product. Two push buttons are used to modify the position of the displayed digits, while the third push button initiates the multiplication process. 
-# How to perform multiplication on Basys3 : 
-1. Set the numbers you wish to multiply using the switches in the order mentioned above. 
-2. Press on BTNC<U18> on Basys3 to start multiplication. Note that pressing on BTNC at any point of time will restart multiplication from the beginning based on the current value of the sixtenn swtiches. 
-3. To switch between the different digits of the product press on BTNL<W19> to slide the digits to the left or BTNR<T17> to slide the digits to the right.
+# Sequential Signed Multiplier
 
-  
+This project implements an 8-bit sequential signed multiplier for the CSCE 2301 course taught by Dr. Mohamed Shalan in Spring 2023 at AUC. The design is intended to be implemented on the DIGILENT BASYS3 FPGA board using software tools like Logisim-evolution and Verilog.
+
+## Specifications
+
+The implemented design utilizes the DIGILENT BASYS3 board, which provides the following components:
+
+- Four seven-segment displays: Used to display the result of the multiplication.
+- Three push buttons: Used for controlling the display and initiating the multiplication process.
+- 16 switches: Used to input the two numbers in two's complement form.
+
+The configuration of the switches is as follows:
+- The leftmost eight switches represent the multiplier.
+- The rightmost eight switches represent the multiplicand.
+
+The seven-segment displays are used as follows:
+- The leftmost display indicates the sign of the product.
+- The remaining three displays show the unsigned product.
+
+The push buttons have the following functions:
+- BTNC (Button C, connected to pin U18): Initiates the multiplication process.
+- BTNL (Button L, connected to pin W19): Slides the digits of the product to the left.
+- BTNR (Button R, connected to pin T17): Slides the digits of the product to the right.
+
+## How to Use
+
+To perform multiplication using the Basys3 board, follow these steps:
+
+1. Set the numbers you wish to multiply using the switches, according to the provided representation.
+2. Press the BTNC button on the Basys3 board to start the multiplication process. Note that pressing BTNC at any point will restart the multiplication using the current switch settings.
+3. To switch between the different digits of the product, press BTNL to slide the digits to the left or BTNR to slide the digits to the right.
+
+## Implementation
+
+The implementation of the 8-bit sequential signed multiplier can be done using software tools like Logisim-evolution and Verilog. The specific details of the implementation may vary depending on the chosen approach.
+
+## Authors
+
+This project is being developed for the CSCE 2301 course at AUC, Spring 2023, under the guidance of Dr. Mohamed Shalan. The contributors to this project are [List the names of the contributors here].
+
+## License
+
+This project is licensed under [Specify the license under which the project is distributed].
+

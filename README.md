@@ -31,7 +31,17 @@ To perform multiplication using the Basys3 board, follow these steps:
 1. Set the numbers you wish to multiply using the switches, according to the provided representation.
 2. Press the BTNC button on the Basys3 board to start the multiplication process. Note that pressing BTNC at any point will restart the multiplication using the current switch settings.
 3. To switch between the different digits of the product, press BTNL to slide the digits to the left or BTNR to slide the digits to the right.
+## Building and Running with Vivado
 
+To build and run the project using Vivado, follow these steps:
+
+1. Open Vivado and create a new project.
+2. Select the appropriate project settings ,we recommend specifiying no RTL sources, and specify the target FPGA device (DIGILENT BASYS3).
+3. Add all source files in the repo to the project files.
+4. Configure the pin assignments in Vivado to match the Basys3 board's pin connections for the seven-segment displays, push buttons, and switches as you prefer or use the constraint file provided in the repo to set use the same configuration described in the specifications.
+5. Run the synthesis and implementation processes in Vivado to generate the programming file (.bit file) for the FPGA.
+6. Connect the Basys3 board to your computer and program the FPGA with the generated bit file using Vivado or the Digilent Adept software.
+7. Once the FPGA is programmed, you can interact with the sequential signed multiplier on the Basys3 board according to the steps mentioned earlier.
 ## Implementation
 
 The implementation and design steps are discussed in deatils within the report file. 

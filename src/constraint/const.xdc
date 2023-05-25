@@ -44,15 +44,7 @@ set_property PACKAGE_PIN W19 [get_ports left_button_in]
 	set_property IOSTANDARD LVCMOS33 [get_ports left_button_in]	
 set_property PACKAGE_PIN T17 [get_ports right_button_in]					
 	set_property IOSTANDARD LVCMOS33 [get_ports right_button_in]	
-
-set_property PACKAGE_PIN P1 [get_ports sa]					
-	set_property IOSTANDARD LVCMOS33 [get_ports sa]	
-set_property PACKAGE_PIN N3 [get_ports sb]					
-	set_property IOSTANDARD LVCMOS33 [get_ports sb]	
-set_property PACKAGE_PIN P3 [get_ports sc]					
-	set_property IOSTANDARD LVCMOS33 [get_ports sc]	
-	
-	
+		
 set_property PACKAGE_PIN L1 [get_ports led]					
 	set_property IOSTANDARD LVCMOS33 [get_ports led]	
 set_property PACKAGE_PIN U2 [get_ports {anode_active[0]}] 

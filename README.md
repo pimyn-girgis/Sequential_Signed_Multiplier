@@ -9,7 +9,7 @@ The implemented design utilizes the DIGILENT BASYS3 board, which provides the fo
 - Four seven-segment displays: Used to display the result of the multiplication.
 - Three push buttons: Used for controlling the display and initiating the multiplication process.
 - 16 switches: Used to input the two numbers in two's complement form.
-- Led (L1) : Used to indicate end of multiplication.
+- Led (Connected to pin L1) : Used to indicate end of multiplication.
 
 The configuration of the switches is as follows:
 - The leftmost eight switches represent the multiplier.

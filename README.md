@@ -15,7 +15,7 @@ The configuration of the switches is as follows:
 - The rightmost eight switches represent the multiplicand.
 
 The seven-segment displays are used as follows:
-- The leftmost display indicates the sign of the product.
+- The leftmost display indicates the sign of the product ; if the product is positive , the leftmost display is turned off otherwise it shows the negative sign.
 - The remaining three displays show the unsigned product.
 
 The push buttons have the following functions:
@@ -33,13 +33,13 @@ To perform multiplication using the Basys3 board, follow these steps:
 
 ## Implementation
 
-The implementation of the 8-bit sequential signed multiplier can be done using software tools like Logisim-evolution and Verilog. The specific details of the implementation may vary depending on the chosen approach.
+The implementation and design steps are discussed in deatils within the report file. 
 
 ## Authors
 
-This project is being developed for the CSCE 2301 course at AUC, Spring 2023, under the guidance of Dr. Mohamed Shalan. The contributors to this project are [List the names of the contributors here].
+This project is being developed for the CSCE 2301 course at AUC, Spring 2023, under the guidance of Dr. Mohamed Shalan. The contributors to this project are Ziad Hassan and Pimyn Girgis.
 
 ## License
 
-This project is licensed under [Specify the license under which the project is distributed].
+This project is licensed under GPLv2 (see LICENSE file).
 

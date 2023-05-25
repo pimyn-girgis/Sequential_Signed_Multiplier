@@ -26,10 +26,10 @@ The push buttons have the following functions:
 
 ## How to Use
 
-To perform multiplication using the Basys3 board, follow these steps:
+To perform multiplication using the DIGILENT BASYS3 board, follow these steps:
 
 1. Set the numbers you wish to multiply using the switches, according to the provided representation.
-2. Press the BTNC button on the Basys3 board to start the multiplication process. Note that pressing BTNC at any point will restart the multiplication using the current switch settings.
+2. Press the BTNC button on the DIGILENT BASYS3 board to start the multiplication process. Note that pressing BTNC at any point will restart the multiplication using the current switch settings.
 3. To switch between the different digits of the product, press BTNL to slide the digits to the left or BTNR to slide the digits to the right.
 ## Building and Running with Vivado
 

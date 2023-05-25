@@ -64,8 +64,5 @@ end
 assign right_digit = (state == A) ? bcd[3:0] : ( (state==B)? bcd[7:4] : bcd[11:8]); 
 assign middle_digit = (state == A) ? bcd[7:4] : ( (state==B)? bcd[11:8] : bcd[15:12]); 
 assign left_digit = (state == A) ? bcd[11:8] : ( (state==B)? bcd[15:12] : bcd[19:16]); 
-assign sa = (state == A )? 1'b1 : 1'b0 ; 
-assign sb = (state == B )? 1'b1 : 1'b0 ; 
-assign sc = (state == C )? 1'b1 : 1'b0 ; 
 
 endmodule
